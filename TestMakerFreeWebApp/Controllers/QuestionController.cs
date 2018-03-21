@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using TestMakerFreeWebApp.ViewModels;
 using System.Collections.Generic;
+
 namespace TestMakerFreeWebApp.Controllers
 {
     [Route("api/[controller]")]
@@ -10,33 +11,36 @@ namespace TestMakerFreeWebApp.Controllers
     {
         #region RESTful conventions methods
         /// <summary>
-        /// Retrieves the QUestion with the given {id}
+        /// Retrieves the Question with the given {id}
         /// </summary>
-        /// &lt;param name="id">The ID of an existing Question</param>
+        /// <param name="id">The ID of an existing Question</param>
         /// <returns>the Question with the given {id}</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             return Content("Not implemented (yet)!");
         }
+
         /// <summary>
         /// Adds a new Question to the Database
         /// </summary>
-        /// <param name="m">The QuestionViewModel containing the data to insert</param>
+        /// <param name="model">The QuestionViewModel containing the data to insert</param>
         [HttpPut]
-        public IActionResult Put(QuestionViewModel m)
+        public IActionResult Put(QuestionViewModel model)
         {
             throw new NotImplementedException();
         }
+
         /// <summary>
         /// Edit the Question with the given {id}
         /// </summary>
-        /// <param name="m">The QuestionViewModel containing the data to update</param>
+        /// <param name="model">The QuestionViewModel containing the data to update</param>
         [HttpPost]
-        public IActionResult Post(QuestionViewModel m)
+        public IActionResult Post(QuestionViewModel model)
         {
             throw new NotImplementedException();
         }
+
         /// <summary>
         /// Deletes the Question with the given {id} from the Database
         /// </summary>
@@ -53,6 +57,7 @@ namespace TestMakerFreeWebApp.Controllers
         public IActionResult All(int quizId)
         {
             var sampleQuestions = new List<QuestionViewModel>();
+
             // add a first sample question
             sampleQuestions.Add(new QuestionViewModel()
             {
@@ -62,6 +67,7 @@ namespace TestMakerFreeWebApp.Controllers
                 CreatedDate = DateTime.Now,
                 LastModifiedDate = DateTime.Now
             });
+
             // add a bunch of other sample questions
             for (int i = 2; i <= 5; i++)
             {
@@ -74,13 +80,15 @@ namespace TestMakerFreeWebApp.Controllers
                     LastModifiedDate = DateTime.Now
                 });
             }
+
             // output the result in JSON format
             return new JsonResult(
-            sampleQuestions,
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
+                sampleQuestions,
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
         }
     }
 }
+

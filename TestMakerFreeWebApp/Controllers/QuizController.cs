@@ -12,7 +12,7 @@ namespace TestMakerFreeWebApp.Controllers
     {
         #region RESTful conventions methods
         /// <summary>
-        /// GET: api/quiz/{}id
+        /// GET: api/quiz/{id}
         /// Retrieves the Quiz with the given {id}
         /// </summary>
         /// <param name="id">The ID of an existing Quiz</param>
@@ -29,42 +29,47 @@ namespace TestMakerFreeWebApp.Controllers
                 CreatedDate = DateTime.Now,
                 LastModifiedDate = DateTime.Now
             };
+
             // output the result in JSON format
             return new JsonResult(
-            v,
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
+                v,
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
         }
+
         /// <summary>
         /// Adds a new Quiz to the Database
         /// </summary>
-        /// <param name="m">The QuizViewModel containing the data to insert</param>
+        /// <param name="model">The QuizViewModel containing the data to insert</param>
         [HttpPut]
-        public IActionResult Put(QuizViewModel m)
+        public IActionResult Put(QuizViewModel model)
         {
             throw new NotImplementedException();
         }
+
         /// <summary>
         /// Edit the Quiz with the given {id}
         /// </summary>
-        /// <param name="m">The QuizViewModel containing the data to update</param>
+        /// <param name="model">The QuizViewModel containing the data to update</param>
         [HttpPost]
-        public IActionResult Post(QuizViewModel m)
+        public IActionResult Post(QuizViewModel model)
         {
             throw new NotImplementedException();
         }
+
         /// <summary>
         /// Deletes the Quiz with the given {id} from the Database
         /// </summary>
-        /// <param name="id">The ID of an existing Quiz</param>
+        /// <param name="id">The ID of an existing Test</param>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             throw new NotImplementedException();
         }
         #endregion
+
         #region Attribute-based routing methods
         /// <summary>
         /// GET: api/quiz/latest
@@ -72,11 +77,11 @@ namespace TestMakerFreeWebApp.Controllers
         /// </summary>
         /// <param name="num">the number of quizzes to retrieve</param>
         /// <returns>the {num} latest Quizzes</returns>
-        // GET api/quiz/latest
-        [HttpGet("Latest/{num}")]
+        [HttpGet("Latest/{num:int?}")]
         public IActionResult Latest(int num = 10)
         {
             var sampleQuizzes = new List<QuizViewModel>();
+
             // add a first sample quiz
             sampleQuizzes.Add(new QuizViewModel()
             {
@@ -86,6 +91,7 @@ namespace TestMakerFreeWebApp.Controllers
                 CreatedDate = DateTime.Now,
                 LastModifiedDate = DateTime.Now
             });
+
             // add a bunch of other sample quizzes
             for (int i = 2; i <= num; i++)
             {
@@ -98,15 +104,15 @@ namespace TestMakerFreeWebApp.Controllers
                     LastModifiedDate = DateTime.Now
                 });
             }
+
             // output the result in JSON format
             return new JsonResult(
-            sampleQuizzes,
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
+                sampleQuizzes,
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
         }
-        #endregion
 
         /// <summary>
         /// GET: api/quiz/ByTitle
@@ -118,13 +124,14 @@ namespace TestMakerFreeWebApp.Controllers
         public IActionResult ByTitle(int num = 10)
         {
             var sampleQuizzes = ((JsonResult)Latest(num)).Value
-            as List<QuizViewModel>;
+                as List<QuizViewModel>;
+
             return new JsonResult(
-            sampleQuizzes.OrderBy(t => t.Title),
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
+                sampleQuizzes.OrderBy(t => t.Title),
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
         }
 
         /// <summary>
@@ -137,14 +144,15 @@ namespace TestMakerFreeWebApp.Controllers
         public IActionResult Random(int num = 10)
         {
             var sampleQuizzes = ((JsonResult)Latest(num)).Value
-            as List<QuizViewModel>;
-            return new JsonResult(
-            sampleQuizzes.OrderBy(t => Guid.NewGuid()),
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
-        }
+                as List<QuizViewModel>;
 
+            return new JsonResult(
+                sampleQuizzes.OrderBy(t => Guid.NewGuid()),
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
+        }
+        #endregion
     }
 }

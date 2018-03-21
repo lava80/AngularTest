@@ -31,6 +31,23 @@
     <Compile Remove="Controllers\SampleDataController.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\app\app.module.browser.ts" />
+    <None Remove="ClientApp\app\app.module.server.ts" />
+    <None Remove="ClientApp\app\app.module.shared.ts" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <None Remove="ClientApp\app\components\quiz\quiz-list.component.ts" />
+    <None Remove="ClientApp\app\interfaces\quiz.ts" />
+    <None Remove="ClientApp\dist\main-server.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\quiz\quiz-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\interfaces\quiz.ts" />
+  </ItemGroup>-->
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using TestMakerFreeWebApp.ViewModels;
 using System.Collections.Generic;
+
 namespace TestMakerFreeWebApp.Controllers
 {
     [Route("api/[controller]")]
@@ -12,31 +13,34 @@ namespace TestMakerFreeWebApp.Controllers
         /// <summary>
         /// Retrieves the Answer with the given {id}
         /// </summary>
-        /// &lt;param name="id">The ID of an existing Answer</param>
+        /// <param name="id">The ID of an existing Answer</param>
         /// <returns>the Answer with the given {id}</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             return Content("Not implemented (yet)!");
         }
+
         /// <summary>
         /// Adds a new Answer to the Database
         /// </summary>
-        /// <param name="m">The AnswerViewModel containing the data to insert</param>
+        /// <param name="model">The AnswerViewModel containing the data to insert</param>
         [HttpPut]
-        public IActionResult Put(AnswerViewModel m)
+        public IActionResult Put(AnswerViewModel model)
         {
             throw new NotImplementedException();
         }
+
         /// <summary>
         /// Edit the Answer with the given {id}
         /// </summary>
-        /// <param name="m">The AnswerViewModel containing the data to update</param>
+        /// <param name="model">The AnswerViewModel containing the data to update</param>
         [HttpPost]
-        public IActionResult Post(AnswerViewModel m)
+        public IActionResult Post(AnswerViewModel model)
         {
             throw new NotImplementedException();
         }
+
         /// <summary>
         /// Deletes the Answer with the given {id} from the Database
         /// </summary>
@@ -53,6 +57,7 @@ namespace TestMakerFreeWebApp.Controllers
         public IActionResult All(int questionId)
         {
             var sampleAnswers = new List<AnswerViewModel>();
+
             // add a first sample answer
             sampleAnswers.Add(new AnswerViewModel()
             {
@@ -62,6 +67,7 @@ namespace TestMakerFreeWebApp.Controllers
                 CreatedDate = DateTime.Now,
                 LastModifiedDate = DateTime.Now
             });
+
             // add a bunch of other sample answers
             for (int i = 2; i <= 5; i++)
             {
@@ -74,13 +80,15 @@ namespace TestMakerFreeWebApp.Controllers
                     LastModifiedDate = DateTime.Now
                 });
             }
+
             // output the result in JSON format
             return new JsonResult(
-            sampleAnswers,
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
+                sampleAnswers,
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
         }
     }
 }
+
