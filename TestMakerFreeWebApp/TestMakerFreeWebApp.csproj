@@ -35,6 +35,15 @@
     <None Remove="ClientApp\app\app.module.browser.ts" />
     <None Remove="ClientApp\app\app.module.server.ts" />
     <None Remove="ClientApp\app\app.module.shared.ts" />
+    <None Remove="ClientApp\app\components\about\about.component.ts" />
+    <None Remove="ClientApp\app\components\login\login.component.ts" />
+    <None Remove="ClientApp\app\components\pagenotfound\pagenotfound.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\about\about.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\pagenotfound\pagenotfound.component.ts" />
   </ItemGroup>
 
   <!--<ItemGroup>
