@@ -12,13 +12,13 @@ export class QuizListComponent implements OnInit {
     title: string;
     selectedQuiz: Quiz;
     quizzes: Quiz[];
-    http: HttpClient;
-    baseUrl: string;
+    //http: HttpClient;
+    //baseUrl: string;
 
-    constructor(http: HttpClient,
-        @Inject('BASE_URL') baseUrl: string) {
-        this.http = http;
-        this.baseUrl = baseUrl;
+    constructor(private http: HttpClient,
+        @Inject('BASE_URL') private baseUrl: string) {
+        //this.http = http;
+        //this.baseUrl = baseUrl;
     }
 
     ngOnInit() {
