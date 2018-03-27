@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dd479798bd814521bb82"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d82e37a5633b51475aee"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5115,7 +5115,7 @@ module.exports = "<h2>{{title}}</h2>\r\n<div>\r\n    TestMakerFree: a production
 /* 31 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class='container-fluid'>\r\n    <div class='row'>\r\n        <div class='col-sm-3'>\r\n            <nav-menu></nav-menu>\r\n        </div>\r\n        <div class='col-sm-9 body-content'>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div class='container-fluid'>\r\n    <div class='row'>\r\n        <div class='col-sm-3'>\r\n            <nav-menu></nav-menu>\r\n        </div>\r\n        <div class='col-sm-9 body-content'>\r\n            <router-outlet></router-outlet> <!-- E' quello che mi va a visualizzare nella pagina in base al routing -->\r\n           <!-- <strong>Prova mia pagina</strong>-->\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 32 */
