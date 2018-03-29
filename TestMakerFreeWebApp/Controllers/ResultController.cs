@@ -10,17 +10,10 @@ using Mapster;
 namespace TestMakerFreeWebApp.Controllers
 {
     [Route("api/[controller]")]
-    public class ResultController : Controller
+    public class ResultController : BaseApiController
     {
-        #region Private Fields
-        private ApplicationDbContext DbContext;
-        #endregion
         #region Constructor
-        public ResultController(ApplicationDbContext context)
-        {
-            // Instantiate the ApplicationDbContext through DI
-            DbContext = context;
-        }
+        public ResultController(ApplicationDbContext context) : base(context) { }
         #endregion
 
         #region RESTful conventions methods
@@ -39,15 +32,12 @@ namespace TestMakerFreeWebApp.Controllers
             {
                 return NotFound(new
                 {
-                    Error = String.Format("Result ID {0} has not been found", m.Id)
+                    Error = String.Format("Result ID {0} has not been found", id)
                 });
             }
             return new JsonResult(
             result.Adapt<ResultViewModel>(),
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
+            JsonSettings);
         }
 
         /// <summary>
@@ -72,10 +62,7 @@ namespace TestMakerFreeWebApp.Controllers
             DbContext.SaveChanges();
             // return the newly-created Result to the client.
             return new JsonResult(result.Adapt<ResultViewModel>(),
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
+            JsonSettings);
         }
 
         /// <summary>
@@ -96,7 +83,7 @@ namespace TestMakerFreeWebApp.Controllers
             {
                 return NotFound(new
                 {
-                    Error = String.Format("Result ID {0} has not been found", m.Id)
+                    Error = String.Format("Result ID {0} has not been found", model.Id)
                 });
             }
             // handle the update (without object-mapping)
@@ -113,10 +100,7 @@ namespace TestMakerFreeWebApp.Controllers
             DbContext.SaveChanges();
             // return the updated Quiz to the client.
             return new JsonResult(result.Adapt<ResultViewModel>(),
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
+            JsonSettings);
         }
 
         /// <summary>
@@ -134,7 +118,7 @@ namespace TestMakerFreeWebApp.Controllers
             {
                 return NotFound(new
                 {
-                    Error = String.Format("Result ID {0} has not been found", m.Id)
+                    Error = String.Format("Result ID {0} has not been found", id)
                 });
             }
             // remove the quiz from the DbContext.
@@ -143,10 +127,7 @@ namespace TestMakerFreeWebApp.Controllers
             DbContext.SaveChanges();
             // return an HTTP Status 200 (OK).
             return new JsonResult(new OkResult(),
-           new JsonSerializerSettings()
-           {
-               Formatting = Formatting.Indented
-           });
+           JsonSettings);
         }
         #endregion
 
@@ -159,11 +140,9 @@ namespace TestMakerFreeWebApp.Controllers
 .ToArray();
             return new JsonResult(
             results.Adapt<ResultViewModel[]>(),
-            new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented
-            });
+            JsonSettings);
         }
     }
 }
+
 
