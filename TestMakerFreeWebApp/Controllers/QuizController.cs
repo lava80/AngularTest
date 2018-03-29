@@ -150,7 +150,12 @@ namespace TestMakerFreeWebApp.Controllers
             // persist the changes into the Database.
             DbContext.SaveChanges();
             // return an HTTP Status 200 (OK).
-            return new OkResult();
+            //return new OkResult();
+            return new JsonResult(new OkResult(),
+            new JsonSerializerSettings()
+            {
+                Formatting = Formatting.Indented
+            });
         }
         #endregion
 
