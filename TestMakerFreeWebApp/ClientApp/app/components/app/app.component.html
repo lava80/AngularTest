@@ -1,11 +1,27 @@
 <div class='container-fluid'>
     <div class='row'>
+        <nav class="navbar header-content">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a [routerLink]="['/home']">
+                        <img src="/dist/res/img/logo.svg"
+                             alt="TestMakerFree" />
+                    </a>
+                </div>
+                <quiz-search class="search-header" placeholder="Search
+for a quiz..."></quiz-search>
+                Style Sheets and UI Layout Chapter 6
+                [ 285 ]
+            </div>
+        </nav>
+    </div>
+    <div class='row'>
         <div class='col-sm-3'>
             <nav-menu></nav-menu>
         </div>
         <div class='col-sm-9 body-content'>
             <router-outlet></router-outlet> <!-- E' quello che mi va a visualizzare nella pagina in base al routing -->
-           <!-- <strong>Prova mia pagina</strong>-->
+            <!-- <strong>Prova mia pagina</strong>-->
         </div>
     </div>
 </div>
