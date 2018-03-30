@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a5d9d94ba70f62268b25"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "53b6f5cc43077d6ef740"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5383,7 +5383,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".answer-edit textarea {\r\n    min-width: 500px;\r\n}\r\n", ""]);
+exports.push([module.i, ".answer-edit textarea {\n  min-width: 500px;\n}\n", ""]);
 
 // exports
 
@@ -5397,7 +5397,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "table.answers {\r\n    min-width: 500px;\r\n}\r\n", ""]);
+exports.push([module.i, "table.answers {\n  min-width: 500px;\n}\n", ""]);
 
 // exports
 
@@ -5411,7 +5411,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "@media (max-width: 767px) {\r\n    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */\r\n    .body-content {\r\n        padding-top: 50px;\r\n    }\r\n}\r\n", ""]);
+exports.push([module.i, "@media (max-width: 767px) {\n  /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */\n  .body-content {\n    padding-top: 50px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -5425,7 +5425,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "quiz-list {\r\n    width: 400px;\r\n    display: block;\r\n    padding: 2px 20px;\r\n    margin: 0px 5px;\r\n    float: left;\r\n}\r\n\r\n    quiz-list.latest {\r\n        background-color: #f0f0f0;\r\n    }\r\n\r\n    quiz-list.byTitle {\r\n        background-color: #e0e0e0;\r\n    }\r\n\r\n    quiz-list.random {\r\n        background-color: #d0d0d0;\r\n    }\r\n", ""]);
+exports.push([module.i, "quiz-list {\n  width: 400px;\n  display: block;\n  padding: 2px 20px;\n  margin: 0px 5px;\n  float: left;\n}\nquiz-list.latest {\n  background-color: #f0f0f0;\n}\nquiz-list.byTitle {\n  background-color: #e0e0e0;\n}\nquiz-list.random {\n  background-color: #d0d0d0;\n}\n", ""]);
 
 // exports
 
@@ -5439,7 +5439,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "li .glyphicon {\r\n    margin-right: 10px;\r\n}\r\n\r\n/* Highlighting rules for nav menu items */\r\nli.link-active a,\r\nli.link-active a:hover,\r\nli.link-active a:focus {\r\n    background-color: #4189C7;\r\n    color: white;\r\n}\r\n\r\n/* Keep the nav menu independent of scrolling and on top of other items */\r\n.main-nav {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 1;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    /* On small screens, convert the nav menu to a vertical sidebar */\r\n    .main-nav {\r\n        height: 100%;\r\n        width: calc(25% - 20px);\r\n    }\r\n    .navbar {\r\n        border-radius: 0px;\r\n        border-width: 0px;\r\n        height: 100%;\r\n    }\r\n    .navbar-header {\r\n        float: none;\r\n    }\r\n    .navbar-collapse {\r\n        border-top: 1px solid #444;\r\n        padding: 0px;\r\n    }\r\n    .navbar ul {\r\n        float: none;\r\n    }\r\n    .navbar li {\r\n        float: none;\r\n        font-size: 15px;\r\n        margin: 6px;\r\n    }\r\n    .navbar li a {\r\n        padding: 10px 16px;\r\n        border-radius: 4px;\r\n    }\r\n    .navbar a {\r\n        /* If a menu item's text is too long, truncate it */\r\n        width: 100%;\r\n        white-space: nowrap;\r\n        overflow: hidden;\r\n        text-overflow: ellipsis;\r\n    }\r\n}\r\n", ""]);
+exports.push([module.i, "li .glyphicon {\n  margin-right: 10px;\n}\n/* Highlighting rules for nav menu items */\nli.link-active a,\nli.link-active a:hover,\nli.link-active a:focus {\n  background-color: #4189C7;\n  color: white;\n}\n/* Keep the nav menu independent of scrolling and on top of other items */\n.main-nav {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 1;\n}\n@media (min-width: 768px) {\n  /* On small screens, convert the nav menu to a vertical sidebar */\n    .main-nav {\n        height: 100%;\n        width: calc(25% - 20px);\n    }\n  .navbar {\n    border-radius: 0px;\n    border-width: 0px;\n    height: 100%;\n  }\n  .navbar-header {\n    float: none;\n  }\n  .navbar-collapse {\n    border-top: 1px solid #444;\n    padding: 0px;\n  }\n  .navbar ul {\n    float: none;\n  }\n  .navbar li {\n    float: none;\n    font-size: 15px;\n    margin: 6px;\n  }\n  .navbar li a {\n    padding: 10px 16px;\n    border-radius: 4px;\n  }\n  .navbar a {\n    /* If a menu item's text is too long, truncate it */\n    width: 100%;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n}\n", ""]);
 
 // exports
 
@@ -5453,7 +5453,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".question-edit textarea {\r\n    min-width: 500px;\r\n}\r\n", ""]);
+exports.push([module.i, ".question-edit textarea {\n  min-width: 500px;\n}\n", ""]);
 
 // exports
 
@@ -5467,7 +5467,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "table.questions {\r\n    min-width: 500px;\r\n}\r\n", ""]);
+exports.push([module.i, "table.questions {\n  min-width: 500px;\n}\n", ""]);
 
 // exports
 
@@ -5481,7 +5481,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".quiz-edit input[type=\"text\"],\r\n.quiz-edit textarea {\r\n    min-width: 500px;\r\n}\r\n", ""]);
+exports.push([module.i, ".quiz-edit input[type=\"text\"],\n.quiz-edit textarea {\n  min-width: 500px;\n}\n", ""]);
 
 // exports
 
@@ -5495,7 +5495,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "ul.quizzes li {\r\n    color: #000acb;\r\n    cursor: pointer;\r\n}\r\n\r\n    ul.quizzes li.selected {\r\n        background-color: #cccccc;\r\n    }\r\n", ""]);
+exports.push([module.i, "ul.quizzes li {\n  color: #000acb;\n  cursor: pointer;\n}\nul.quizzes li.selected {\n  background-color: #cccccc;\n}\n", ""]);
 
 // exports
 
@@ -5509,7 +5509,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".quiz {\r\n    margin: 5px;\r\n    padding: 5px 10px;\r\n    border: 1px solid black;\r\n    background-color: #dddddd;\r\n    width: 300px;\r\n}\r\n\r\n    .quiz * {\r\n        vertical-align: middle;\r\n    }\r\n\r\n    .quiz ul li {\r\n        padding: 5px 0;\r\n    }\r\n", ""]);
+exports.push([module.i, ".quiz {\n  margin: 5px;\n  padding: 5px 10px;\n  border: 1px solid black;\n  background-color: #dddddd;\n  width: 300px;\n}\n.quiz * {\n  vertical-align: middle;\n}\n.quiz ul li {\n  padding: 5px 0;\n}\n", ""]);
 
 // exports
 
@@ -5523,7 +5523,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".result-edit textarea {\r\n    min-width: 500px;\r\n}\r\n", ""]);
+exports.push([module.i, ".result-edit textarea {\n  min-width: 500px;\n}\n", ""]);
 
 // exports
 
@@ -5537,7 +5537,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "table.results {\r\n    min-width: 500px;\r\n}\r\n", ""]);
+exports.push([module.i, "table.results {\n  min-width: 500px;\n}\n", ""]);
 
 // exports
 
