@@ -21,6 +21,9 @@
                (click)="onSubmit(answer)" />
         <input *ngIf="!editMode" type="button" value="Create the
 Answer!" (click)="onSubmit(answer)" />
-        <input type="button" value="Cancel" (click)="onBack()" />
+        <button (click)="onBack()" class="btn btn-sm btn-primary">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            Cancel
+        </button>
     </div>
 </div>

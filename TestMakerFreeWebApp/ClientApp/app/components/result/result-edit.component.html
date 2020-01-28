@@ -19,10 +19,17 @@
                [(ngModel)]="result.MaxValue" />
     </div>
     <div>
-        <input *ngIf="editMode" type="button" value="Apply Changes"
-               (click)="onSubmit(result)" />
-        <input *ngIf="!editMode" type="button" value="Create the
-Result!" (click)="onSubmit(result)" />
-        <input type="button" value="Cancel" (click)="onBack()" />
+        <button *ngIf="editMode" (click)="onSubmit(result)" class="btn btn-sm btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+            Apply Changes
+        </button>
+        <button *ngIf="!editMode" (click)="onSubmit(result)" class="btn btn-sm btn-primary">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            Create the Result!
+        </button>
+        <button (click)="onBack()" class="btn btn-sm btn-primary">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            Cancel
+        </button>
     </div>
 </div>

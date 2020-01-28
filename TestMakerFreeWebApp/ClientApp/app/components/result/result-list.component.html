@@ -21,10 +21,14 @@
                     {{result.MaxValue}}
                 </td>
                 <td>
-                    <input type="button" value="Edit"
-                           (click)="onEdit(result)" />
-                    <input type="button" value="Delete"
-                           (click)="onDelete(result)" />
+                    <button (click)="onEdit(result)" class="btn btn-sm btn-primary">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Edit Result
+                    </button>
+                    <button (click)="onDelete(result)" class="btn btn-sm btn-primary">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Delete Result
+                    </button>
                 </td>
             </tr>
         </tbody>
@@ -35,4 +39,7 @@
     click the <strong>Add a new Result</strong> button to add the first
     one!
 </div>
-<input type="button" value="Add a new Result" (click)="onCreate()" />
+<button (click)="onCreate()" class="btn btn-sm btn-primary">
+    <span class="glyphicon glyphicon-plus-sign"></span>
+    Add a new Result
+</button>
